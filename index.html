@@ -11,7 +11,14 @@
             background-color: #0f0f0f;
             color: #ffffff;
             font-family: Arial, sans-serif;
-            padding-bottom: 60px; /* Neeche space banane ke liye taaki content nav bar ke peeche na chupe */
+            padding-bottom: 70px;
+        }
+        .page-content {
+            padding: 20px;
+            display: none; /* Sabhi pages pehle hidden rahenge */
+        }
+        .active-page {
+            display: block; /* Jo active page hoga wahi dikhega */
         }
         .nav {
             position: fixed;
@@ -35,9 +42,28 @@
 </head>
 <body>
 
-    <div id="content" style="padding: 20px;">
-        <h2>Welcome to Flax eSports</h2>
-        <p>Select an option from the bottom menu to navigate.</p>
+    <!-- Home Tab Screen -->
+    <div id="home" class="page-content active-page">
+        <h2>🏠 Home Page</h2>
+        <p>Welcome to Flax eSports Tournaments!</p>
+    </div>
+
+    <!-- Wallet Tab Screen -->
+    <div id="wallet" class="page-content">
+        <h2>💳 Wallet</h2>
+        <p>Your Balance: ₹0.00</p>
+    </div>
+
+    <!-- Leaderboard Tab Screen -->
+    <div id="leaderboard" class="page-content">
+        <h2>📊 Leaderboard</h2>
+        <p>Top Players of the Week!</p>
+    </div>
+
+    <!-- Logout Tab Screen -->
+    <div id="logout" class="page-content">
+        <h2>👤 Logout</h2>
+        <p>You have been logged out.</p>
     </div>
 
     <!-- Bottom Navigation Bar -->
@@ -45,15 +71,17 @@
         <div onclick="switchTab('home')">🏠<br>Home</div>
         <div onclick="switchTab('wallet')">💳<br>Wallet</div>
         <div onclick="switchTab('leaderboard')">📊<br>Leaderboard</div>
-        <div onclick="logout()">👤<br>Logout</div>
+        <div onclick="switchTab('logout')">👤<br>Logout</div>
     </div>
 
     <script>
-        function switchTab(tab) {
-            alert("Switching to: " + tab);
-        }
-        function logout() {
-            alert("Logging out...");
+        function switchTab(tabId) {
+            // Sabhi pages ko hide kar do
+            let pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active-page'));
+            
+            // Selected page ko show kar do
+            document.getElementById(tabId).classList.add('active-page');
         }
     </script>
 </body>
