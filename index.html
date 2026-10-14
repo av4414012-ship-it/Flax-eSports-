@@ -1,6 +1,60 @@
-<div class="nav">
-    <div onclick="switchTab('home')">🏠 Home</div>
-    <div onclick="switchTab('wallet')">💳 Wallet</div>
-    <div onclick="switchTab('leaderboard')">📊 Leaderboard</div>
-    <div onclick="logout()">👤 Logout</div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flax eSports</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding-bottom: 60px; /* Neeche space banane ke liye taaki content nav bar ke peeche na chupe */
+        }
+        .nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            border-top: 1px solid #333;
+            z-index: 1000;
+        }
+        .nav div {
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="content" style="padding: 20px;">
+        <h2>Welcome to Flax eSports</h2>
+        <p>Select an option from the bottom menu to navigate.</p>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="nav">
+        <div onclick="switchTab('home')">🏠<br>Home</div>
+        <div onclick="switchTab('wallet')">💳<br>Wallet</div>
+        <div onclick="switchTab('leaderboard')">📊<br>Leaderboard</div>
+        <div onclick="logout()">👤<br>Logout</div>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            alert("Switching to: " + tab);
+        }
+        function logout() {
+            alert("Logging out...");
+        }
+    </script>
+</body>
+</html>
