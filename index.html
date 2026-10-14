@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    < charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flax eSports</title>
     <style>
@@ -15,10 +15,10 @@
         }
         .page-content {
             padding: 20px;
-            display: none; /* Sabhi pages pehle hidden rahenge */
+            display: none;
         }
         .active-page {
-            display: block; /* Jo active page hoga wahi dikhega */
+            display: block;
         }
         .nav {
             position: fixed;
@@ -48,13 +48,22 @@
         <p>Welcome to Flax eSports Tournaments!</p>
     </div>
 
-<!-- Wallet Extra Section -->
-<div style="background: #1a1a1a; padding: 15px; border-radius: 10px; margin-top: 10px; border: 1px solid #333;">
-    <h3 style="font-size: 16px; margin-top: 0; color: #fff;">Add Money</h3>
-    <input type="text" placeholder="Enter UTR / Transaction ID" style="width: 100%; padding: 10px; margin-bottom: 10px; background: #0f0f0f; border: 1px solid #444; color: #fff; box-sizing: border-box;">
-    <button onclick="alert('Submitted!')" style="width: 100%; padding: 10px; background: #28a745; color: #fff; border: none; font-weight: bold;">Submit</button>
-</div>
+    <!-- Wallet Tab Screen with QR Code -->
+    <div id="wallet" class="page-content">
+        <h2>💳 Add Money to Wallet</h2>
+        <p style="font-size: 14px; color: #ccc;">Scan QR code below using any UPI app to add funds.</p>
+        
+        <div style="text-align: center; background: #1a1a1a; padding: 15px; border-radius: 10px; margin: 15px 0; border: 1px solid #333;">
+            <img src="https://ibb.co/zWRqXz8G" alt="UPI QR Code" style="width: 180px; height: 180px; border-radius: 8px;">
+            <p style="margin-top: 10px; font-size: 14px; color: #aaa;">UPI ID: <strong>abhishek937@paytm</strong></p>
+        </div>
 
+        <div style="background: #1a1a1a; padding: 15px; border-radius: 10px; border: 1px solid #333;">
+            <h3 style="font-size: 16px; margin-top: 0;">Submit Payment Proof</h3>
+            <input type="text" placeholder="Enter 12-digit UTR / Transaction ID" style="width: 100%; padding: 10px; margin-bottom: 10px; background: #0f0f0f; border: 1px solid #444; color: #fff; box-sizing: border-box; border-radius: 5px;">
+            <button onclick="alert('Payment submitted successfully!')" style="width: 100%; padding: 10px; background: #28a745; color: #fff; border: none; font-weight: bold; border-radius: 5px; cursor: pointer;">Submit Payment</button>
+        </div>
+    </div>
 
     <!-- Leaderboard Tab Screen -->
     <div id="leaderboard" class="page-content">
@@ -78,19 +87,10 @@
 
     <script>
         function switchTab(tabId) {
-            // Sabhi pages ko hide kar do
             let pages = document.querySelectorAll('.page-content');
             pages.forEach(page => page.classList.remove('active-page'));
-            
-            // Selected page ko show kar do
             document.getElementById(tabId).classList.add('active-page');
         }
     </script>
 </body>
 </html>
-<!-- Wallet Extra Section -->
-<div style="background: #1a1a1a; padding: 15px; border-radius: 10px; margin-top: 10px; border: 1px solid #333;">
-    <h3 style="font-size: 16px; margin-top: 0; color: #fff;">Add Money</h3>
-    <input type="text" placeholder="Enter UTR / Transaction ID" style="width: 100%; padding: 10px; margin-bottom: 10px; background: #0f0f0f; border: 1px solid #444; color: #fff; box-sizing: border-box;">
-    <button onclick="alert('Submitted!')" style="width: 100%; padding: 10px; background: #28a745; color: #fff; border: none; font-weight: bold;">Submit</button>
-</div>
